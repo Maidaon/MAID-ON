@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+    <!-- Font Awesome CDN link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- Custom CSS file link -->
+    <link rel="stylesheet" href="css/style.css">
+   
+  </head>
+  <body>
+      <header>
+          <a href="index.html" class="btn"><i class="fas fa-arrow-left"></i> Back</a>
+      </header>
+      
+      <section class="maids" id="maids">
+          <h1 class="heading">CHOOSE <span>YOUR MAID!</span></h1>
+  
+          <div class="maid-cards">
+              <div class="maid-card">
+                  <img src="image/maid-1.png" alt="Minatozaki Sana">
+                  <h3>Minatozaki Sana</h3>
+                  <div class="Number">09755992192</div>
+                  <a href="maidsana.html" class="btn">Book Now!</a>
+              </div>
+  
+              <div class="maid-card">
+                  <img src="image/maid-2.png" alt="Chou Tzu-yu">
+                  <h3>Chou Tzu-yu</h3>
+                  <div class="Number">0988547773</div>
+                  <a href="maidtzuyu.html" class="btn">Book Now!</a>
+              </div>
+  
+              <div class="maid-card">
+                  <img src="image/maid-3.png" alt="Momo Hirai">
+                  <h3>Momo Hirai</h3>
+                  <div class="Number">0976363622</div>
+                  <a href="maidmomo.html" class="btn">Book Now!</a>
+              </div>
+  
+              <div class="maid-card">
+                  <img src="image/maid-4.png" alt="Son Chae-young">
+                  <h3>Son Chae-young</h3>
+                  <div class="Number">09889232172</div>
+                  <a href="maidchaeyoung.html" class="btn">Book Now!</a>
+              </div>
+  
+              <div class="maid-card">
+                  <img src="image/maid-5.jpg" alt="Yoo Jeong-yeon">
+                  <h3>Yoo Jeong-yeon</h3>
+                  <div class="Number">09889232172</div>
+                  <a href="maidjeongyeon.html" class="btn">Book Now!</a>
+              </div>
+  
+              <div class="maid-card">
+                  <img src="image/maid-6.jpg" alt="Park Ji-hyo">
+                  <h3>Park Ji-hyo</h3>
+                  <div class="Number">09889232172</div>
+                  <a href="maidjihyo.html" class="btn">Book Now!</a>
+              </div>
+  
+              <div class="maid-card">
+                  <img src="image/maid-7.jpg" alt="Kim Da-hyun">
+                  <h3>Kim Da-hyun</h3>
+                  <div class="Number">09889232172</div>
+                  <a href="maiddahyun.html" class="btn">Book Now!</a>
+              </div>
+  
+              <div class="maid-card">
+                  <img src="image/maid-8.jpg" alt="Mina Myoi">
+                  <h3>Mina Myoi</h3>
+                  <div class="Number">09889232172</div>
+                  <a href="maidmina.html" class="btn">Book Now!</a>
+              </div>
+  
+              <div class="maid-card">
+                  <img src="image/maid-9.jpg" alt="Im Na-Yeon">
+                  <h3>Im Na-Yeon</h3>
+                  <div class="Number">09889232172</div>
+                  <a href="maidnayeon.html" class="btn">Book Now!</a>
+              </div>
+  
+              <div class="maid-card">
+                  <img src="image/maid-10.jpg" alt="Annie Rose Magbag">
+                  <h3>Annie Rose Magbag</h3>
+                  <div class="Number">09889232172</div>
+                  <a href="maiddotty.html" class="btn">Book Now!</a>
+              </div>
+          </div>
+      </section>
+  
+
+
+    <!-- Other sections and content go here -->
+
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
+<!-- Include jQuery (you can add this in your head) -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<!-- Add the following script -->
+<script>
+  $(document).ready(function() {
+    $('.rating').on('click', 'i', function() {
+      const index = $(this).index(); // Get the index of the clicked star
+      const rating = index + 1; // Calculate the rating (1-indexed)
+
+      // Set the data-rating attribute and update star colors
+      $(this).parent().attr('data-rating', rating);
+      updateStarColors($(this).parent());
+
+      // You can send the rating to the server or perform other actions here
+      // For demonstration purposes, let's log the rating to the console
+      console.log('Rating:', rating);
+    });
+
+    // Reset the rating when the user leaves the rating container
+    $('.rating').on('mouseleave', function() {
+      const currentRating = $(this).attr('data-rating');
+      if (currentRating) {
+        updateStarColors($(this), currentRating);
+      } else {
+        updateStarColors($(this), 0);
+      }
+    });
+
+    // Helper function to update star colors based on the rating
+    function updateStarColors(ratingContainer, rating) {
+      ratingContainer.find('i').each(function(index) {
+        if (index < rating) {
+          $(this).removeClass('far').addClass('fas');
+        } else {
+          $(this).removeClass('fas').addClass('far');
+        }
+      });
+    }
+  });
+</script>

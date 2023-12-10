@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <a href="search.html" class="btn-back"><i class="fas fa-arrow-left"></i> Back</a>
+    </header>
+    <main>
+        <section class="maids" id="maids">
+            <h1 class="heading">CHOOSE <span>YOUR MAID!</span></h1>
+            <div class="maid-cards">
+                <div class="swiper maids-slider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide passport-entry">
+                            <img src="image/maid-9.jpg" alt="Im Na-Yeon" class="passport-photo">
+                            <div class="passport-details">
+                                <h3>Im Na-Yeon</h3>
+                                <div class="passport-info">
+                                    <p><strong>Age:</strong> 28</p>
+                                    <p><strong>Nationality:</strong> South Korean</p>
+                                    <p><strong>Contact:</strong> 09755992192</p>
+                                </div>
+                            </div>
+                            <a href="thankyou.html" class="btn btn-book">Book Now!</a>
+                        </div>               
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Retrieve the stored rating and feedback
+        const storedRating = localStorage.getItem('lastRating');
+        const storedFeedback = localStorage.getItem('lastFeedback');
+
+        // Display the rating and feedback on the maid's profile page
+        if (storedRating && storedFeedback) {
+            const ratingElement = document.createElement('p');
+            ratingElement.innerHTML = `<strong>Rating:</strong> ${storedRating}`;
+            document.querySelector('.passport-info').appendChild(ratingElement);
+
+            const feedbackElement = document.createElement('p');
+            feedbackElement.innerHTML = `<strong>Feedback:</strong> ${storedFeedback}`;
+            document.querySelector('.passport-info').appendChild(feedbackElement);
+        }
+    </script>
+</body>
+</html>

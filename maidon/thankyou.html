@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>MAID ON</title>
+</head>
+
+<body>
+    <a href="index.html" class="btn"> Maid On </a>
+    <div class="d-flex justify-content-center align-items-center login-container">
+        <form class="login-form text-center" id="ratingForm" action="#" method="post">
+            <img class="mb-5 logo" src="image/LOGO.png" />
+
+            <h1 class="heading">Rate this maid</h1>
+
+            <div class="rating" data-rating="5">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+
+            <div class="form-group">
+                <label for="feedback">Can you rate this maid?</label>
+                <textarea class="form-control" id="feedback" name="feedback" rows="3"
+                    placeholder="Enter your feedback"></textarea>
+            </div>
+
+            <!-- Add a dropdown to select the maid -->
+            <div class="form-group">
+                <label for="maidDropdown">Select Maid:</label>
+                <select class="form-control" id="maidDropdown">
+                    <option value="maidsana">Minatozaki Sana</option>
+                    <!-- Add other maids as options -->
+                    <option value="maidtzuyu">Chou Tzu-yu</option>
+                    <option value="maidmomo">Momo Hirai</option>
+                    <option value="maidchaeyoung">Son Chae-young</option>
+                    <option value="maidjeongyeon">Yoo Jeong-yeon</option>
+                    <option value="maidjihyo">Park Ji-hyo</option>
+                    <option value="maiddahyun">Kim Da-hyun</option>
+                    <option value="maidmina">Mina Myoi</option>
+                    <option value="maidnayeon">Im Na-Yeon</option>
+                    <option value="maiddotty">Annie Rose Magbag</option>
+                </select>
+            </div>
+
+            <button type="button" class="btn btn-primary" id="submitBtn">Submit</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.rating').on('click', 'i', function () {
+                const index = $(this).index();
+                const rating = index + 1;
+                $(this).parent().attr('data-rating', rating);
+                updateStarColors($(this).parent());
+            });
+
+            function updateStarColors(ratingContainer) {
+                const rating = parseInt(ratingContainer.attr('data-rating'));
+                ratingContainer.find('i').each(function (index) {
+                    if (index < rating) {
+                        $(this).removeClass('far').addClass('fas');
+                    } else {
+                        $(this).removeClass('fas').addClass('far');
+                    }
+                });
+            }
+
+            $('#submitBtn').on('click', function () {
+                const rating = $('.rating').attr('data-rating');
+                const feedback = $('#feedback').val();
+                // Retrieve the selected maid from the dropdown
+                const selectedMaid = $('#maidDropdown').val();
+
+                const confirmation = window.confirm(`Do you want to submit the rating: ${rating}\nFeedback: ${feedback}`);
+
+                if (confirmation) {
+                    // Store the rating and feedback (you can use cookies, local storage, etc.)
+                    localStorage.setItem('lastRating', rating);
+                    localStorage.setItem('lastFeedback', feedback);
+
+                    
+                    // Add more "else if" blocks for additional maids as needed
+                }// Redirect to the selected maid's profile page
+                if (selectedMaid === 'maidsana') {
+                    window.location.href = 'maidsana.html';
+                } else if (selectedMaid === 'maidtzuyu') {
+                    window.location.href = 'maidtzuyu.html';
+                } else if (selectedMaid === 'maidmomo') {
+                    window.location.href = 'maidmomo.html';
+                }else if (selectedMaid === 'maidchaeyoung') {
+                    window.location.href = 'maidchaeyoung.html';
+                } else if (selectedMaid === 'maidjeongyeon') {
+                    window.location.href = 'maidjeongyeon.html';
+                } else if (selectedMaid === 'maidjihyo') {
+                    window.location.href = 'maidjihyo.html';
+                } else if (selectedMaid === 'maiddahyun') {
+                    window.location.href = 'maiddahyun.html';
+                } else if (selectedMaid === 'maidmina') {
+                    window.location.href = 'maidmina.html';
+                } else if (selectedMaid === 'maidnayeon') {
+                    window.location.href = 'maidnayeon.html';
+                } else if (selectedMaid === 'maiddotty') {
+                    window.location.href = 'maiddotty.html';
+                } 
+            });
+        });
+    </script>
+</body>
+
+</html>

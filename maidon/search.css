@@ -1,0 +1,178 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 15px; /* Increased padding for better spacing */
+    text-align: center;
+}
+
+.maids {
+    text-align: center;
+    padding: 50px 20px; /* Adjusted padding for better spacing */
+}
+
+.heading {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px; /* Slightly reduced margin for better spacing */
+}
+
+.maid-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.maid-card {
+    background-color: #fff;
+    border: 1px solid #e1e1e1;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    max-width: 250px;
+    transition: transform 0.3s ease-in-out;
+    margin: 15px; /* Added margin for better separation between cards */
+}
+
+.maid-card:hover {
+    transform: scale(1.05);
+}
+
+.maid-card img {
+    max-width: 100%;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.maid-card h3 {
+    font-size: 1.4rem; /* Slightly reduced font size for better proportion */
+    margin: 10px 0;
+    color: #333;
+}
+
+.Number {
+    font-size: 1rem;
+    color: #666;
+}
+
+.rating {
+    color: #f8ce0b;
+    margin-bottom: 10px;
+}
+
+.rating i {body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+}
+
+.maids {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.heading {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.maid-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.maid-card {
+    background-color: #fff;
+    border: 1px solid #e1e1e1;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    max-width: 250px;
+    transition: transform 0.3s ease-in-out;
+    margin: 15px;
+}
+
+.maid-card:hover {
+    transform: scale(1.05);
+}
+
+.maid-card img {
+    max-width: 100%;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.maid-card h3 {
+    font-size: 1.4rem;
+    margin: 10px 0;
+    color: #333;
+}
+
+.Number {
+    font-size: 1rem;
+    color: #666;
+}
+
+.rating {
+    color: #f8ce0b;
+    margin-bottom: 10px;
+}
+
+.rating i {
+    font-size: 1.2rem;
+    margin-right: 5px;
+}
+
+.btn {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 10px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #555;
+}
+
+    font-size: 1.2rem;
+    margin-right: 5px;
+}
+
+.btn {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 15px; /* Slightly reduced padding for better proportion */
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 10px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #555;
+}
